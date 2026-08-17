@@ -1,0 +1,40 @@
+{
+  "name": "@misofm/link",
+  "version": "0.1.0",
+  "description": "Resolve music-industry identifiers to payable Sui objects through SuiNS leaf subnames.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "sideEffects": false,
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepack": "bun run build",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test",
+    "test:e2e": "MISO_LINK_E2E=1 bun test test/e2e.test.ts",
+    "codegen": "sui-ts-codegen generate"
+  },
+  "peerDependencies": {
+    "@mysten/sui": "^2.24.0",
+    "@mysten/suins": "^1.2.14",
+    "typescript": "^5"
+  },
+  "devDependencies": {
+    "@mysten/codegen": "^0.10.6",
+    "@mysten/sui": "^2.24.0",
+    "@mysten/suins": "^1.2.14",
+    "@types/bun": "latest",
+    "typescript": "^5"
+  }
+}
