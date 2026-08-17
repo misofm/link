@@ -1,4 +1,4 @@
-# @misofm/link
+# Miso Link
 
 ```ts
 const recording = await client.link.resolve('isrc', 'US-NAG-24-98535');
